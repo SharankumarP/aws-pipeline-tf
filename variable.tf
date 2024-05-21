@@ -4,5 +4,5 @@ variable "aws_region" {
 }
 variable "s3_test8_bucket_name" {
   type    = string
-  default = "tfbackend-bucket"
+  default = "tfbackend-bucket-test"
 }
