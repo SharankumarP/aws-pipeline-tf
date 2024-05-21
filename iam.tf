@@ -35,7 +35,3 @@ resource "aws_iam_role" "codepipeline_role" {
 }
 EOF
 }
-resource "aws_iam_role_policy_attachment" "code-commit" {
-  role       = aws_iam_role.codepipeline_role.name
-  policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
-}
