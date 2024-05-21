@@ -7,7 +7,6 @@ terraform {
   }
 }
 
-provider "aws"{
-    #configuration options
-    region = "eu-west-2a"
+provider "aws" {
+  region = var.aws_region
 }
