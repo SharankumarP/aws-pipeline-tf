@@ -6,7 +6,7 @@ resource "aws_s3_bucket" "s3_test8_bucket_backend" {
   #checkov:skip=CKV_AWS_145: No KMS encryption needed for TF state bucket
   #checkov:skip=CKV_AWS_21: No versioning needed for TF state bucket
   #checkov:skip=CKV_AWS_18: No logging needed for TF state bucket
-  bucket = var.s3_bucket_name 
+  bucket = var.s3_test8_bucket_name 
 }
 
 resource "aws_s3_bucket_acl" "s3_bucket_backend_acl" {
