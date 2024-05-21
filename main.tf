@@ -1,6 +1,3 @@
-data "aws_codecommit_repository" "repo" {
-  repository_name = var.repo_name
-}
 resource "aws_codebuild_project" "example" {
   name         = var.codebuild_project_name
   service_role = aws_iam_role.example.arn
@@ -10,8 +7,8 @@ resource "aws_codebuild_project" "example" {
     type         = "LINUX_CONTAINER"
   }
   source {
-    type            = "CODECOMMIT"
-    location        = data.aws_codecommit_repository.repo.clone_url_http
+    type            = "Github"
+    location        = https://github.com/SharankumarP/aws-pipeline-tf.git
     git_clone_depth = 1
     buildspec       = <<-EOF
       version: 0.2
@@ -50,8 +47,8 @@ resource "aws_codepipeline" "example" {
     action {
       name     = "SourceAction"
       category = "Source"
-      owner    = "AWS"
-      provider = "CodeCommit"
+      owner    = "Github"
+      provider = "Github"
       version  = "1"
       configuration = {
         RepositoryName = var.repo_name
