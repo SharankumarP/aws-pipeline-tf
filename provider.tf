@@ -6,11 +6,6 @@ terraform {
     }
   }
 
-  backend "s3"{
-    bucket = "video-tf-backend"
-    key    = "backend"
-    region = "eu-west-2a"
-
 provider "aws" {
   region = "eu-west-2a"
 }
