@@ -5,6 +5,7 @@ terraform {
       version = "~> 4.0"
     }
   }
+
   backend "s3"{
     bucket = "video-tf-backend"
     key    = "backend"
