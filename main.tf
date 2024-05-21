@@ -1,4 +1,4 @@
-resource "aws_s3_bucket" "s3_test_bucket_backend" {
+resource "aws_s3_bucket" "s3_bucket_backend" {
   #checkov:skip=CKV_AWS_145: Lifecycle configuration not required for TF state bucket
   #checkov:skip=CKV2_AWS_61: Lifecycle configuration not required for TF state bucket
   #checkov:skip=CKV_AWS_144: Cross-region replication not required for TF state bucket
